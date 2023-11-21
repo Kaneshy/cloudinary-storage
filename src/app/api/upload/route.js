@@ -15,7 +15,6 @@ cloudinary.config({
 
 export async function GET() {
     const { resources: sneakers } = await cloudinary.api.resources_by_tag('random');
-    console.log('here are the sneakers',sneakers)
     return NextResponse.json(sneakers)
 
 }

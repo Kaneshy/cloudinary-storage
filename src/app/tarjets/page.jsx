@@ -14,8 +14,6 @@ function GalleryTarjets() {
         const data = await response.json()
         setdata(data)
         setisLoading(true)
-        console.log(data)
-
     }
 
     return (
@@ -27,7 +25,7 @@ function GalleryTarjets() {
                 {isLoading && (data.map(item => {
                     return (
                         <div key={item.public_id} className="imgTarjet" >
-                            <img src={item.url} alt="" />
+                            <img src={item.secure_url} alt="" />
                         </div>
                     )
                 }))}
