@@ -26,7 +26,7 @@ function GalleryTarjets() {
             <div className="gridcontainer" >
                 {isLoading && (data.map(item => {
                     return (
-                        <div className="imgTarjet" >
+                        <div key={item.public_id} className="imgTarjet" >
                             <img src={item.url} alt="" />
                         </div>
                     )
