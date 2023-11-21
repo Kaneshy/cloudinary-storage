@@ -6,8 +6,6 @@ export default function Home() {
   const [file, setfile] = useState(null)
   const [imgUrl, setimgUrl] = useState(null)
 
-
-
   return (
     <div>
       <form onSubmit={async (e) => {
@@ -21,12 +19,10 @@ export default function Home() {
           body: formData,
         })
         const data = await response.json()
-        // console.log(data)
         setimgUrl(data.url)
       }}>
         <input type="file" onChange={(e) => {
           setfile(e.target.files[0])
-          // console.log(e.target.files[0])
         }} />
         <button >
           enviar
