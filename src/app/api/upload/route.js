@@ -25,7 +25,7 @@ export async function POST(request) {
         return NextResponse.json('no se ha subido')
     }
     const bytes = await image.arrayBuffer()
-    const buffer = Buffer.from(bytes)
+    const buffer = new Uint8Array(bytes)
 
     // guardarlo en memoria interna
     // const filePath = path.join(process.cwd(), 'assets', image.name)
@@ -36,7 +36,8 @@ export async function POST(request) {
             tags: ['random']
         }, (err, result) => {
             if (err) {
-                reject(err)
+                reject(err);
+                return;
             }
             resolve(result)
         }).end(buffer)
