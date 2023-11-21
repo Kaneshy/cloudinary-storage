@@ -5,9 +5,9 @@ import { revalidatePath } from "next/cache";
 // import path, { resolve } from 'path'
 
 cloudinary.config({
-    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
-    api_key:process.env.CLOUDINARY_API_KEY,
-    api_secret:process.env.API_SECRET
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.API_SECRET
 });
 
 export async function GET() {
